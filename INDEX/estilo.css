@@ -8,6 +8,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(199, 255, 197);
+
 }
 
 #botones {
@@ -28,6 +30,8 @@ body {
     transition: 0.4s;
     font-size: 20px;
     border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+
 }
 
 .boton:hover {
