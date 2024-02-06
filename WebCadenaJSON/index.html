@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Coches</title>
+</head>
+<body>
+    <div class="añadir">
+        <div class="botones">
+        <button onclick="añadircoche()">Agregar a JSON</button>
+        <button onclick="eliminarcoche()">Eliminar por Marca y Modelo</button>
+    </div>
+        <form>
+        <a>Marca: </a>
+        <select id="marca" name="Marca">
+        <option value="Tesla">Tesla</option>
+        <option value="Ferrari">Ferrari</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Lamborghini">Lamborghini</option>
+        <option value="Porsche">Porsche</option>
+        <option value="Dodge">Dodge</option>
+        <option value="Honda">Honda</option>
+        <option value="Rivian">Rivian</option>
+        <option value="Renault">Renault</option>
+        <option value="Seat">Seat</option>
+         <option value="Peugeot">Peugeot</option>
+         </select>
+        Modelo: <input type="text" id="modelo">
+        Año: <input type="text" id="año">
+        <a>Color: </a>
+        <select id="color" name="Color">
+        <option value="Rojo">Rojo</option>
+        <option value="Negro">Negro</option>
+        <option value="Blanco">Blanco</option>
+        <option value="Morado">Morado</option>
+        <option value="Plata">Plata</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Naranja">Naranja</option>
+        <option value="Gris">Gris</option>
+        <option value="Verde">Verde</option>
+         <option value="Azul">Azul</option>
+         </select>
+         <br>
+        <a>Combustible: </a>
+        <select id="combustible" name="Combustible">
+        <option value="Gasolina">Gasolina</option>
+        <option value="Gasoil">Gasoil</option>
+        <option value="Eléctrico">Eléctrico</option>
+        <option value="Híbrido">Híbrido</option>
+         <option value="Gas">Gas</option>
+         <option value="Gasolina Premium">Gasolina Premium</option>
+
+         </select>
+         <br>
+         <a>Transmisión: </a>
+         <select id="transmision" name="Transmisión">
+         <option value="Manual">Manual</option>
+         <option value="Automática">Automática</option>
+         <option value="Dual Motor">Dual Motor</option>
+         <option value="CVT"> CVT</option>
+
+          </select>
+        Caballos de potencia: <input type="text" id="caballos">
+    </form>
+    </div>
+    <div id="ej"></div>
+    <div id="div1" class="div1"></div>
+    <script src="index.js"></script>
+</body>
+</html>

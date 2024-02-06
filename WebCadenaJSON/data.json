@@ -1,0 +1,99 @@
+{
+  "carCollection": "Ultimate Car Enthusiasts",
+  "location": "Speed City",
+  "founded": 2018,
+  "headquarters": "Velocity Plaza",
+  "active": true,
+  "cars": [
+      {
+          "brand": "SuperSpeed",
+          "model": "Turbo X",
+          "year": 2022,
+          "color": "Red",
+          "fuelType": "Gasoline",
+          "transmission": "Automatic",
+          "horsepower": 350
+      },
+      {
+          "brand": "ThunderRide",
+          "model": "Thunderbolt GT",
+          "year": 2023,
+          "color": "Blue",
+          "fuelType": "Electric",
+          "transmission": "Dual Motor",
+          "horsepower": 500
+      },
+      {
+          "brand": "EcoDrive",
+          "model": "GreenMachine",
+          "year": 2021,
+          "color": "Green",
+          "fuelType": "Hybrid",
+          "transmission": "CVT",
+          "horsepower": 250
+      },
+      {
+          "brand": "TechTron",
+          "model": "Smart Cruiser",
+          "year": 2024,
+          "color": "Silver",
+          "fuelType": "Electric",
+          "transmission": "Autonomous",
+          "horsepower": 400
+      },
+      {
+          "brand": "LuxuryLiner",
+          "model": "Platinum Edition",
+          "year": 2025,
+          "color": "Black",
+          "fuelType": "Premium Gasoline",
+          "transmission": "Semi-Automatic",
+          "horsepower": 600
+      },
+      {
+          "brand": "VelocityVibe",
+          "model": "Speedster Pro",
+          "year": 2023,
+          "color": "Yellow",
+          "fuelType": "Gasoline",
+          "transmission": "Manual",
+          "horsepower": 450
+      },
+      {
+          "brand": "NeoDrive",
+          "model": "Futuristic Elegance",
+          "year": 2024,
+          "color": "White",
+          "fuelType": "Electric",
+          "transmission": "Automated Manual",
+          "horsepower": 550
+      },
+      {
+          "brand": "BlazeJet",
+          "model": "Inferno X",
+          "year": 2022,
+          "color": "Orange",
+          "fuelType": "Gasoline",
+          "transmission": "Semi-Automatic",
+          "horsepower": 380
+      },
+      {
+          "brand": "AeroLux",
+          "model": "Skyline GT",
+          "year": 2023,
+          "color": "Purple",
+          "fuelType": "Hybrid",
+          "transmission": "CVT",
+          "horsepower": 300
+      },
+      {
+          "brand": "QuantumDrive",
+          "model": "Quantum X",
+          "year": 2024,
+          "color": "Silver",
+          "fuelType": "Electric",
+          "transmission": "Autopilot",
+          "horsepower": 480
+      }
+  ]
+}

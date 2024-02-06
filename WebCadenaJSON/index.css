@@ -1,0 +1,100 @@
+body{
+    background-color: rgb(245, 149, 149);
+    display: flex;
+    justify-content: center; /* Alinea los elementos horizontalmente al centro */
+    align-items: center;
+    flex-direction:column;
+}
+
+.añadir{
+    border-style: solid;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+}
+.div1{
+    columns: 2;
+}
+
+button {
+    border: solid;
+    border-width: 3px;
+    background-color: rgb(29, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+  }
+
+  button:hover{
+    background-color: rgb(255, 255, 255);
+
+  }
+.botones{
+    display: flex;
+    justify-content: center; /* Alinea los elementos horizontalmente al centro */
+    align-items: center;
+    flex-direction:line;
+
+}
+.divnuevo{
+    display: inline-block;
+    border-style: double;
+    border-color: green;
+    border-radius: 20px;
+    border-width: 8px;
+    margin: 20px;
+    padding:20px;
+    width:auto;
+    align-items: center;
+    justify-content:center;
+    background-color: rgb(222, 194, 255);
+    
+}
+
+input[type=text] {
+    background-color: #cdffed;
+    max-width: 100%;
+    transition-duration: 0.2s;
+
+
+    
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #cdffed;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+@media screen and (min-widrgb(255, 255, 255)x) {
+   
+    .div1{
+        columns: 1;
+        flex-direction:row;
+
+    }
+        }
+
+@media screen and (min-width:400px) {
+   
+    .div1{
+        columns: 2;
+        flex-direction:row;
+
+    }
+        }
+@media screen and (min-width:1000px) {
+   
+.div1{
+    columns: 5;
+}
+    }
