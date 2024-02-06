@@ -1,0 +1,74 @@
+body{
+    box-sizing: border-box;
+}
+
+.cabecera_biografia{
+    display: block;
+    padding-top: 0.6em;
+    position:relative;
+    text-align: center;
+    font-size: 1.6em;
+    margin-top: 3em;
+}
+
+.biografia_descripcionconfoto{
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+div p{
+    text-align: justify;
+    margin: 20px 20px 20px 20px;
+}
+
+.foto_biografia{
+    display: flex;
+    margin: auto auto;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    height: 20em; /* Ajusta el tamaño del div de foto para que se mantenga centrado */
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+/* GALERIA DE MARCAS */
+
+
+.galeria_empresas{
+    columns: 2;
+}
+.galeria_empresas img{
+    width: 100px;
+    height: auto;
+    background-color: rgb(211, 210, 210);
+}
+
+.galeria_empresas img:hover{
+    scale:1.1;
+    transition: scale 0.5s;
+}
+
+@media screen and (min-width:600px) {
+    
+.cabecera_biografia{
+     font-size: 1.6em;
+}
+.biografia_descripcion{
+    display: inline-block;
+    text-align: justify;
+}
+
+div p{
+    font-size: 20px;
+    text-align: justify;
+    margin: 50px 20px 20px 20px;
+    max-width: none;
+}
+
+.galeria_empresas{
+    columns: 4;
+}
+
+}

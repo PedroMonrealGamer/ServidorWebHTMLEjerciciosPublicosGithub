@@ -1,0 +1,111 @@
+body{
+    box-sizing: border-box;    
+}
+/* Contenedor con fotos  */
+.spacex_contenedor_galeria {
+    display: none;
+    gap: 10px;
+    columns: 3;
+    max-width: 10000px;
+    margin: 0 auto;
+
+}
+
+.spacex_contenedor_galeria_foto img {
+    width: 30%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.spacex_contenedor_galeria_foto img:hover {
+scale:1.1;
+transition: all 0.5s;
+}
+/* FIN Contenedor con fotos  */
+
+.cabecera_spacex{
+    display: block;
+    padding-top: 0.6em;
+    position:relative;
+    text-align: center;
+    font-size: 1.6em;
+    margin-top: 3em;
+    overflow: hidden;
+}
+
+.cabecera_spacex_modelos{
+    display: block;
+    padding-top: 0.6em;
+    position:relative;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 3em;
+}
+
+.titulo_spacex_modelos{
+    display: block;
+    padding-top: 0.6em;
+    position:relative;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0em;
+}
+
+.titulo_spacex_modelos:hover{
+    color:blue;
+    transition: color 0.5s;
+}
+
+.spacex_div_modelo_foto{
+
+    display: flex;
+    margin: auto auto;
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px;
+    height: 10em;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+
+.spacex_div_modelo_foto:hover{
+
+    scale:1.1;
+    transition: scale 0.5s;
+}
+
+.spacex_div_modelo p{
+    text-align: center;
+    align:justify;
+    margin: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+@media screen and (min-width:600px) {
+.spacex_contenedor_galeria {
+    display: flex;
+    }
+.cabecera_spacex{
+    font-size: 1.6em;
+    margin-top: 3em;
+
+}
+
+.spacex_div_modelo_foto{
+    height: 20em;
+} 
+
+.titulo_spacex_modelos{
+    margin-top: 3em;
+}
+
+
+.spacex_contenedor_galeria {
+    max-width: 1000px;
+}
+
+    }

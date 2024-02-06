@@ -1,0 +1,76 @@
+body{
+    overflow-x:hidden;
+}
+
+    div.collage div{
+    margin: 10%;
+} 
+
+.cabecera_elon{
+    display: none;
+    padding: 0.5em;
+    position:relative;
+    text-align: center;
+    font-family: tesla;
+    font-size: 3.3em;
+    margin-top: 3em;
+}
+
+.cajas{
+    width: 330px;
+    columns:2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cajas .foto{
+    width: 100%;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+.cajas .foto img{
+    max-width: 100%;
+    border-radius: 15px;
+    z-index: 0;
+    position: relative;
+}
+
+div:hover img{
+    filter: grayscale(65%);
+    transition: all 0.5s; 
+}
+
+div.cajas img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+    filter: grayscale(0%);
+    z-index: 2;
+}
+
+
+/* BREAKPOINTS */
+
+@media screen and (min-width:600px) {
+
+    .cabecera_elon{
+        display: block;
+        font-size: 2em;
+    }
+    
+    .cajas{
+        width: 500px;
+        columns:3;
+    }
+
+@media screen and (min-width:1000px) {
+
+.cabecera_elon{
+    display: block;
+}
+
+.cajas{
+    width: 1000px;
+    columns:4;
+}
+}
