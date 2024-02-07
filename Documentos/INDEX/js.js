@@ -13,7 +13,6 @@ function crearBotones() {
         boton.href = url[i];
         boton.innerHTML = web[i];
         divBotones.appendChild(boton);
-        
     }
 }
 function crearcarrusel() {
