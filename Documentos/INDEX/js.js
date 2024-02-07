@@ -1,6 +1,6 @@
-var url = ['CarruselFotos', 'ProyectoWebResponsiveMobileFirst(BreakPoint)', 'WebCadenaJSON'];
+var url = ['../CarruselFotos', '../ProyectoWebResponsiveMobileFirst(BreakPoint)', '../WebCadenaJSON'];
 var web = ['Carrusel Fotos', 'Proyecto WebResponsive Mobile First (BreakPoint)', 'Web con cadena JSON'];
-var fotoscarrusel = ['INDEX//fotos/1.png', 'INDEX//fotos/2.png','INDEX//fotos/3.png'];
+var fotoscarrusel = ['fotos/1.png', 'fotos/2.png','fotos/3.png'];
 var fotoactual = 0;
 crearBotones();
 crearcarrusel();
