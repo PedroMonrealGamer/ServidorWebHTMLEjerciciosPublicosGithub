@@ -2,8 +2,10 @@ var url = ['/Documentos/CarruselFotos', '/Documentos/ProyectoWebResponsiveMobile
 var web = ['Carrusel Fotos', 'Proyecto WebResponsive Mobile First (BreakPoint)', 'Web con cadena JSON'];
 var fotoscarrusel = ['/Documentos/INDEX/fotos/1.png', '/Documentos/INDEX/fotos/2.png','/Documentos/INDEX/fotos/3.png'];
 var fotoactual = 0;
-crearBotones();
-crearcarrusel();
+window.addEventListener('DOMContentLoaded', () => {
+    crearBotones();
+    crearcarrusel();
+});
 function crearBotones() {
     var divBotones = document.getElementById("botones");
     for (var i = 0; i < url.length; i++) {
