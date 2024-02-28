@@ -67,17 +67,16 @@ body {
 }
 
 img{
-    border-style: solid;
+    border-style: dashed;
     border-width: 5px;
-    border-radius: 30px;
-    border-color:rgb(25, 0, 255);
+    border-color: rgb(179, 179, 179);
 }
 
 .descripcion{
+    color:white;
     font-size: 20px;
     border-style: solid;
     padding: 10px;
-    background-color: rgb(250, 250, 207);
     border-radius: 30px;
     margin: 20px;
 }
