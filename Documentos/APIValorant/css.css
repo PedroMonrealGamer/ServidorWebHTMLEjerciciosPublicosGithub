@@ -1,0 +1,117 @@
+*{
+    display: inline-block;
+    text-align: center;
+    font-family: valorant;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(31, 31, 31);
+    background-image: url('fondo.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.titulo1{
+    color:white;
+    font-size: 50px;
+    text-shadow: 0 0 20px red;
+}
+
+.titulo2{
+    color:white;
+    font-size: 15px;
+    text-shadow: 0 0 20px red;
+}
+
+.nombre{
+    color:white;
+    font-size: 25px;
+    text-shadow: 0 0 20px red;
+
+}
+.divpersonaje{
+    border-style: solid;
+    border-color:white;
+    margin: 10px;
+    height: 235px;
+    width: 170px;
+    overflow: hidden;
+    background-color: #00000085;
+    box-shadow: 0 0 15px red;
+    transition: 0.5s;
+}
+
+.divpersonajemovil{
+    transition: 1s;
+}
+
+
+.divpersonaje:hover{
+    box-shadow: 0 0 20px rgb(255, 153, 0);
+
+}
+
+.divfoto{
+    background-position: center;
+    background-size: 190%;
+    width: 100%;
+
+}
+.divfoto img{
+    width:160px;
+}
+.divpersonajeprincipal{
+    display: block;
+}
+
+.divpersonajesecundario{
+    background-color: black;
+    box-shadow: 0 0 50px rgb(136, 255, 0);
+
+}
+.divpersonajesecundario img{
+    scale:200%;
+    opacity: 30%;
+        justify-content: space-around;
+
+}
+
+.oculto{
+    height: 0%;
+}
+
+.visible{
+    height: 100%;
+}
+
+.nombrepersonaje{
+color:rgb(255, 255, 255);
+text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.habilidadpersonaje{
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color:rgb(255, 255, 255);
+
+}
+
+.divhab{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+}
+
+
+.divhab img{
+    height: 10px;
+    margin: 10px;
+    opacity: 100%;
+
+}
