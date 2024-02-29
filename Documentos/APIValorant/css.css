@@ -4,7 +4,6 @@ body{
     background-color: rgb(31, 31, 31);
     background-image: url('fondo.png');
     background-size:cover;
-    background-repeat: no-repeat;
     background-position: center;
     color:white;
 }
