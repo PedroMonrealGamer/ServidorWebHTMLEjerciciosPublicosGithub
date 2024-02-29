@@ -52,14 +52,6 @@ nav a:last-child {
     text-shadow: 0 0 20px red;
 }
 
-.titulo2{
-    display: inline-block;
-
-    color:white;
-    font-size: 15px;
-    text-shadow: 0 0 20px red;
-}
-
 .nombre{
     color:white;
     font-size: 25px;

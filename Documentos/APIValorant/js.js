@@ -109,7 +109,7 @@ setInterval(function () {
     for (var i = 0; i < 3; i++) {
         efecto(i);
     }
-}, 5000);
+}, 4000);
 
 function efecto(i) {
     var divElement = document.getElementById(i);

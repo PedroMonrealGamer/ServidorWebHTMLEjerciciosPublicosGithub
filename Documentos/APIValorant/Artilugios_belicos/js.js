@@ -1,156 +1,120 @@
+var Categorias = {
+    Opciones: [
+        { Categoria: "EEquippableCategory::Heavy", Nombre: "Heavy"},
+        { Categoria: "EEquippableCategory::Rifle", Nombre: "Rifle"},
+        { Categoria: "EEquippableCategory::Shotgun", Nombre: "Shotgun"},
+        { Categoria: "EEquippableCategory::Sidearm", Nombre: "Sidearm"},
+        { Categoria: "EEquippableCategory::Sniper", Nombre: "Sniper"},
+        { Categoria: "EEquippableCategory::SMG", Nombre: "SMG"},
 
-axios.get('https://valorant-api.com/v1/maps', {
+
+
+    ]
+}
+
+axios.get('https://valorant-api.com/v1/weapons', {
     responseType: 'json',
 })
 .then(function (res) {
+    CrearCategorias(res);
     console.log(res);
 
-    mapas(res.data);
 })
 .catch(function (err) {
     console.log(err);
 });
 
-function mapas(data) {
-    var div = document.getElementById("div");
+/* //////////////////////////////////////////////////////////////////// */
 
-    for (var i = 0; i <data.data.length ; i++) { /* Se ejecuta para cada agente */
-    if (data.data[i].listViewIconTall !== null && data.data[i].displayIcon !== null) {
-     /* Puede que haya agentes duplicados sin foto, aquí se evita */
-            var divmapa = document.createElement("div");
-            divmapa.classList.add("divmapa");
-            divmapa.id = i;
+function CrearCategorias(res) {
+    var divGrupo = document.createElement("div");
 
-            divmapa.addEventListener("click", function() { /* Al hacer click, ejecutamos la función */
-                divmapacambio(this.id);
-            });
+    // Crear categorías
+    for (var i = 0; i < Categorias.Opciones.length; i++) {
+        var divCategoria = document.createElement("div");
 
-            var divmapaprincipal = document.createElement("div");
-            divmapaprincipal.classList.add("divmapaprincipal");
+        var nombreCategoria = document.createElement("h1");
+        nombreCategoria.textContent = Categorias.Opciones[i].Nombre;
 
-            var nombremapa = document.createElement("h1");
-            nombremapa.classList.add("nombremapa");
-            nombremapa.textContent = data.data[i].displayName;
+        nombreCategoria.classList.add("nombreCategoria");
+        divCategoria.classList.add("divcategoria");
+        divCategoria.appendChild(nombreCategoria);
+        var divcajacateogoria = document.createElement("div");
+        divCategoria.appendChild(divcajacateogoria);
+        divcajacateogoria.classList.add("divcajacateogoria");
 
-            var imgmapa = document.createElement("img");
-            imgmapa.src = data.data[i].splash;
-            imgmapa.id = "imgmapa" + i;
-            var divfoto = document.createElement("div");
-            divfoto.classList.add("divfoto");
-            divfoto.classList.add("divfotoprincipal");
-            divfoto.appendChild(imgmapa);
+        divcajacateogoria.id = Categorias.Opciones[i].Categoria;
 
+        divGrupo.appendChild(divCategoria);
+    }
 
+    document.body.appendChild(divGrupo);
+    clasificar(res);
+}
 
-            var descripcionmapa = document.createElement("h2");
-            descripcionmapa.id = "descripcionmapa" + i;
-            descripcionmapa.classList.add("descripcionmapa");
-            descripcionmapa.textContent = data.data[i].narrativeDescription;
+function clasificar(res) {
 
-
-
-
-            divmapaprincipal.appendChild(nombremapa);
-            divmapaprincipal.appendChild(descripcionmapa);
-            divmapaprincipal.appendChild(divfoto)
-            divmapaprincipal.id = "divmapaprincipal" + i;
-
-            var divboton = document.createElement("div");
-            divboton.classList.add("divboton");
-
-
-            divmapaprincipal.style.height = "100%";
-            divmapaprincipal.classList.add("divmapamovil");
-
-
-/* CONTENIDO DIV SECUNDARIO  ******************************************* */
-            var divmapasecundario = document.createElement("div");
-            var divgeneralhabilidades = document.createElement("div");
-            divgeneralhabilidades.classList.add("divgeneralhabilidades")
-
-            for (var hab = 0; hab < 4; hab++){
-                var divhab = document.createElement("div");
+    // Clasificar elementos en categorías
+    for (var i = 0; i < res.data.data.length; i++) {
+        for (var categoria = 0; categoria < Categorias.Opciones.length; categoria++) {
+            if (res.data.data[i].category === Categorias.Opciones[categoria].Categoria) {
+                crearArmas(res, i, categoria);
             }
-            divmapasecundario.appendChild(divgeneralhabilidades);
-            divmapasecundario.classList.add("divmapasecundario");
-            
-            var divfotosecundario = document.createElement("div");
-            divmapasecundario.appendChild(divfotosecundario);
-            var imgmapasecundario = document.createElement("img");
-            imgmapasecundario.src = data.data[i].displayIcon;
-            divfotosecundario.appendChild(imgmapasecundario);
-            divfotosecundario.classList.add("divfotosecundario");
-            divfotosecundario.classList.add("divfoto");
-            imgmapasecundario.classList.add("imgmapasecundario");
-            divmapasecundario.classList.add("divmapamovil");
-
-
-            divmapasecundario.id = "divmapasecundario" + i;
-
-            divmapasecundario.style.height = "0%";
-            
-            divfotosecundario.addEventListener("click", divmapacambio);
-
-            divmapa.appendChild(divmapaprincipal);
-            divmapa.appendChild(divmapasecundario);
-
-            div.appendChild(divmapa);
         }
     }
 }
 
-function divmapacambio(id) {
-    var iddiv1 = "divmapaprincipal" + id;
-    var divmapaprincipal = document.getElementById(iddiv1);
-    divmapaprincipal.style.height = "0%";
+function crearArmas(res, i, categoria) {
 
-    var iddiv2 = "divmapasecundario" + id;
-    var divmapasecundario = document.getElementById(iddiv2);
-    divmapasecundario.style.height = "100%";
+    var divcajacateogoria = document.getElementById(res.data.data[i].category);
 
-    setTimeout(function() {
-        var iddiv1 = "divmapaprincipal" + id;
-        var divmapaprincipal = document.getElementById(iddiv1);
-        divmapaprincipal.style.height = "100%";
-        var iddiv2 = "divmapasecundario" + id;
-        var divmapasecundario = document.getElementById(iddiv2);
-        divmapasecundario.style.height = "0%";
+    var divArma = document.createElement("div");
+    divArma.classList.add("divArma");
 
-        setTimeout(function() {
-            var iddiv1 = "divmapaprincipal" + id;
-            var nombremapa = "nombremapa" + id;
+    var divPrincipal = document.createElement("div");
+    var nombreArma = document.createElement("h2");
+    nombreArma.textContent = res.data.data[i].displayName;
+    nombreArma.classList.add("nombreArma");
+    var divfotoarma = document.createElement("div");
+    divfotoarma.classList.add("divfotoarma");
+    var fotoArma = document.createElement("img");
+    fotoArma.src = res.data.data[i].displayIcon;
+    fotoArma.classList.add("fotoArma");
+    divfotoarma.appendChild(fotoArma);
+    var datosArma = document.createElement("div");
+    var precioArma = document.createElement("h1");
+    precioArma.textContent =("▢" + res.data.data[i].shopData.cost);
+    precioArma.classList.add("precioArma")
+    datosArma.classList.add("datosArma")
 
-            var divmapaprincipal = document.getElementById(iddiv1);
-            var nombremapa = document.getElementById(nombremapa);
+    var botonesArmaDIV = document.createElement("div");
+    var botonDetalles = document.createElement("button");
+        botonDetalles.textContent = "Detalles";
 
-            var descripcionmapa = document.getElementById("descripcionmapa" + id);
-            var imgmapa = document.getElementById("imgmapa" + id);
-            divmapaprincipal.classList.add("blur");
-            imgmapa.style.filter = "blur(5px)";
-            imgmapa.style.filter = "grayscale(100%)";
-
-            descripcionmapa.style.opacity = "90%";
-        }, 1000);
-
-
-        setTimeout(function() {
-            var iddiv1 = "divmapaprincipal" + id;
-            var nombremapa = "nombremapa" + id;
-
-            var divmapaprincipal = document.getElementById(iddiv1);
-            var nombremapa = document.getElementById(nombremapa);
-
-            var descripcionmapa = document.getElementById("descripcionmapa" + id);
-            var imgmapa = document.getElementById("imgmapa" + id);
-            divmapaprincipal.classList.remove("blur");
-            imgmapa.style.filter = "";
-            descripcionmapa.style.opacity = "";
-            imgmapa.style.filter = "";
-
-        }, 10000);
+    var botonSkins = document.createElement("button");
+    botonSkins.textContent = "Skins";
+    botonDetalles.classList.add("botonesArma");
+    botonSkins.classList.add("botonesArma");
 
 
-    }, 5000);
 
+    botonesArmaDIV.classList.add("botonesArmaDIV");
+    botonesArmaDIV.appendChild(botonDetalles);
+    botonesArmaDIV.appendChild(botonSkins);
+
+
+
+
+
+
+    datosArma.appendChild(precioArma);
+
+    divcajacateogoria.appendChild(divArma);
+
+
+    divArma.appendChild(divPrincipal);
+    divPrincipal.appendChild(nombreArma);
+    divPrincipal.appendChild(divfotoarma);
+    divPrincipal.appendChild(datosArma);
+    divPrincipal.appendChild(botonesArmaDIV);
 }
-

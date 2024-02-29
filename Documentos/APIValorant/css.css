@@ -13,10 +13,14 @@ h1{
     font-family: Valorant;
     text-align: center;
     text-shadow: 0 0 15px red;
-
-
 }
 
+h2{
+    font-size: 30px;
+    font-family: Valorant;
+    text-align: center;
+    text-shadow: 0 0 15px red;
+}
 .div{
     display: flex;
     flex-wrap: wrap;
