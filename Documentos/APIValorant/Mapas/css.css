@@ -1,0 +1,149 @@
+*{
+    text-align: center;
+    font-family: valorant;
+    
+}
+
+body{    
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    background-image: url('fondo.png');
+    background-size:contain;
+    background-position:center;
+
+}
+
+
+nav{
+    display: flex;
+    align-items: center;
+    background-color: rgba(172, 91, 91, 0.466);
+    height: 40px;
+    text-align: center;
+    box-shadow: 0 0 15px red;
+
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-family:system-ui;
+    transition: 0.3s;
+
+
+}
+
+nav a:hover{
+    color: #ffc8c8;
+}
+
+nav a:last-child {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.titulo1{
+    display: inline-block;
+    color:white;
+    font-size: 50px;
+    text-shadow: 0 0 20px red;
+}
+
+.nombre{
+    color:white;
+    font-size: 25px;
+    text-shadow: 0 0 20px red;
+
+}
+.divmapa{
+    display: inline-block;
+    border-style: solid;
+    border-color:white;
+    margin: 10px;
+    width: 900px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #000000a4;
+    box-shadow: 0 0 15px red;
+    transition: 0.5s;
+}
+
+.divmapamovil{
+    transition: 1s;
+}
+
+
+.divmapa:hover{
+    box-shadow: 0 0 20px rgb(255, 153, 0);
+    scale: 1.01;
+
+}
+
+.divfoto{
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+}
+.divfoto img{
+    height: 600px;
+    width: auto;
+    opacity: 100%;
+}
+.divmapaprincipal{
+    
+    display: block;
+    
+    
+}
+
+.divmapasecundario{
+
+    display: inline-block;
+    background-color: black;
+    box-shadow: 0 0 50px rgb(136, 255, 0);
+    width: 900px;
+    height: 500px;
+    
+
+}
+
+.oculto{
+    height: 0%;
+}
+
+.visible{
+    height: 100%;
+}
+
+.nombremapa{
+color:rgb(255, 255, 255);
+text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+transition: 1s;
+}
+
+.descripcionmapa{
+    color:rgb(0, 0, 0);
+    position: absolute;
+    opacity: 1%;
+    transition: 1s;
+    z-index: 1;
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+
+
+    
+}
+
+
+.blur {
+    filter: blur(0px);
+    transition: 1s;
+  }
+  

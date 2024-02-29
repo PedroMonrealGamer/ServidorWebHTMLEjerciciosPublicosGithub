@@ -1,0 +1,158 @@
+*{
+    text-align: center;
+    font-family: valorant;
+}
+
+body{    
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    background-image: url('fondo.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background-color: rgba(172, 91, 91, 0.466);
+    height: 40px;
+    text-align: center;
+    box-shadow: 0 0 15px red;
+
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-family:system-ui;
+    transition: 0.3s;
+
+
+}
+
+nav a:hover{
+    color: #ffc8c8;
+}
+
+nav a:last-child {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.titulo1{
+    display: inline-block;
+    color:white;
+    font-size: 50px;
+    text-shadow: 0 0 20px red;
+}
+
+.titulo2{
+    display: inline-block;
+
+    color:white;
+    font-size: 15px;
+    text-shadow: 0 0 20px red;
+}
+
+.nombre{
+    color:white;
+    font-size: 25px;
+    text-shadow: 0 0 20px red;
+
+}
+.divpersonaje{
+    display: inline-block;
+    border-style: solid;
+    border-color:white;
+    margin: 10px;
+    height: 235px;
+    width: 170px;
+    overflow: hidden;
+    background-color: #00000085;
+    box-shadow: 0 0 15px red;
+    transition: 0.5s;
+}
+
+.divpersonajemovil{
+    transition: 1s;
+}
+
+
+.divpersonaje:hover{
+    box-shadow: 0 0 20px rgb(255, 153, 0);
+
+}
+
+.divfoto{
+    background-position: center;
+    background-size: 190%;
+    width: 100%;
+
+}
+.divfoto img{
+    width:160px;
+}
+.divpersonajeprincipal{
+    
+    display: block;
+}
+
+.divpersonajesecundario{
+
+    display: inline-block;
+    background-color: black;
+    box-shadow: 0 0 50px rgb(136, 255, 0);
+    height: 300px;
+    width: 170px;
+
+}
+.divpersonajesecundario img{
+    scale:200%;
+    opacity: 30%;
+        justify-content: space-around;
+
+}
+
+.oculto{
+    height: 0%;
+}
+
+.visible{
+    height: 100%;
+}
+
+.nombrepersonaje{
+color:rgb(255, 255, 255);
+text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
+1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.habilidadpersonaje{
+	font-size: 25px;
+    font-family: 'Segoe UI';
+    font-size: 12px;
+    color:rgb(255, 255, 255);
+
+}
+
+.divhab{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+
+}
+
+
+.divhab img{
+    height: 10px;
+    margin: 10px;
+    opacity: 100%;
+
+}

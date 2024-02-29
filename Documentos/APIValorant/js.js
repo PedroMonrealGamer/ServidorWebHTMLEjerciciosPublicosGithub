@@ -1,135 +1,123 @@
+var Menu = {
+    Opciones: [
+        { Nombre: "Agentes", Fotos: [], URL: "Agentes/index.html"},
+        { Nombre: "Mapas", Fotos: [], URL: "Mapas/index.html"},
+        { Nombre: "Artilugios Bélicos", Fotos: [], URL: "Artilugios_belicos"},
 
+    ]
+}
+/* //////////////////////////////////////////////////////////////////// */
 axios.get('https://valorant-api.com/v1/agents', {
     responseType: 'json',
 })
 .then(function (res) {
     console.log(res);
 
-    personajeprincipal(res.data);
+    Menu.Opciones[0].Fotos = res.data.data[Math.floor(Math.random() * 10)].displayIcon;
 })
 .catch(function (err) {
     console.log(err);
 });
 
-function personajeprincipal(data) {
-    var div = document.getElementById("div");
+/* //////////////////////////////////////////////////////////////////// */
 
-    for (var i = 0; i < 22; i++) {
-        if (data.data[i].bustPortrait !== null) {
-            var divpersonaje = document.createElement("div");
-            divpersonaje.id = i;
-            divpersonaje.addEventListener("click", function() {
-                divpersonajecambio(this.id);
-            });
+axios.get('https://valorant-api.com/v1/maps', {
+    responseType: 'json',
+})
+.then(function (res) {
+    console.log(res);
+    Menu.Opciones[1].Fotos = res.data.data[Math.floor(Math.random() * 7)].listViewIconTall
+    ;
+})
+.catch(function (err) {
+    console.log(err);
+});
 
-            divpersonaje.classList.add("divpersonaje");
-            var divpersonajeprincipal = document.createElement("div");
-            divpersonajeprincipal.classList.add("divpersonajeprincipal");
+/* //////////////////////////////////////////////////////////////////// */
 
-            var nombrepersonaje = document.createElement("h1");
-            nombrepersonaje.classList.add("nombrepersonaje");
-            nombrepersonaje.textContent = data.data[i].displayName;
+axios.get('https://valorant-api.com/v1/weapons', {
+    responseType: 'json',
+})
+.then(function (res) {
+    console.log(res);
+    Menu.Opciones[2].Fotos = res.data.data[Math.floor(Math.random() * 10)].displayIcon;
+    Mostrar();
 
-            var imgpersonaje = document.createElement("img");
-            imgpersonaje.src = data.data[i].displayIcon;
-
-            var divfoto = document.createElement("div");
-            divfoto.classList.add("divfoto");
-            divfoto.classList.add("divfotoprincipal");
-            divfoto.appendChild(imgpersonaje);
-            divfoto.style.backgroundImage = `url("${data.data[i].background}")`;
-
-
-            divpersonajeprincipal.appendChild(nombrepersonaje);
-            divpersonajeprincipal.appendChild(divfoto)
-            divpersonajeprincipal.id = "divpersonajeprincipal" + i;
-            console.log(divpersonajeprincipal.id);
-
-
-            var divboton = document.createElement("div");
-            divboton.classList.add("divboton");
-
-
-            divpersonajeprincipal.style.height = "100%";
-            divpersonajeprincipal.classList.add("divpersonajemovil");
-
-
-/* CONTENIDO DIV SECUNDARIO  ******************************************* */
-            var divpersonajesecundario = document.createElement("div");
-            var divgeneralhabilidades = document.createElement("div");
-            divgeneralhabilidades.classList.add("divgeneralhabilidades")
-
-            for (var hab = 0; hab < 4; hab++){
-                var divhab = document.createElement("div");
-                divhab.classList.add("divhab");
-                divgeneralhabilidades.appendChild(divhab)
-
-                var nombrehab = document.createElement("h1");
-                nombrehab.classList.add("nombrehab");
-                nombrehab.textContent = data.data[i].abilities[hab].displayName;
-                var logohab = document.createElement("img");
-                logohab.classList.add("logohab");
-                logohab.src = data.data[i].abilities[hab].displayIcon;
-                divhab.appendChild(nombrehab);
-                divhab.appendChild(logohab);
-                nombrehab.classList.add("habilidadpersonaje");
-
-            }
-            divpersonajesecundario.appendChild(divgeneralhabilidades);
-            divpersonajesecundario.classList.add("divpersonajesecundario");
-
-
-
-            var divfotosecundario = document.createElement("div");
-            divpersonajesecundario.appendChild(divfotosecundario);
+})
+.catch(function (err) {
+    console.log(err);
+});
 
 
 
 
-            var imgpersonajesecundario = document.createElement("img");
-            imgpersonajesecundario.src = data.data[i].bustPortrait;
-            divfotosecundario.appendChild(imgpersonajesecundario);
-            divfotosecundario.classList.add("divfotosecundario");
-            divfotosecundario.classList.add("divfoto");
-            imgpersonajesecundario.classList.add("imgpersonajesecundario");
-            divpersonajesecundario.classList.add("divpersonajemovil");
 
 
-            divpersonajesecundario.id = "divpersonajesecundario" + i;
-            console.log(divpersonajesecundario.id);
 
-            divpersonajesecundario.style.height = "0%";
-            
-            divfotosecundario.addEventListener("click", divpersonajecambio);
+/* //////////////////////////////////////////////////////////////////// */
 
-            divpersonaje.appendChild(divpersonajeprincipal);
-            divpersonaje.appendChild(divpersonajesecundario);
+function Mostrar(res){
 
-            
-            div.appendChild(divpersonaje);
-        }
+    for(i = 0; i < Menu.Opciones.length; i++){
+/*         console.log(Menu.Opciones[i].Fotos);
+       var div = document.getElementById("div");
+       var foto = document.createElement("img");
+       foto.src = Menu.Opciones[i].Fotos;
+       div.appendChild(foto); */
+
+
+
+
+
+       var divelemento = document.createElement("div");
+       var titluloelemento = document.createElement("h1");
+       titluloelemento.textContent = Menu.Opciones[i].Nombre;
+       var divfotoelemento = document.createElement("div");
+       var fotoelemento = document.createElement("img");
+       fotoelemento.src = Menu.Opciones[i].Fotos;
+        divelemento.id = i;
+
+        divfotoelemento.appendChild(fotoelemento);
+       divelemento.appendChild(titluloelemento);
+       divelemento.classList.add("divelemento");
+       divelemento.style.backgroundImage = `url("${Menu.Opciones[i].Fotos}")`;
+       divelemento.addEventListener("click", function() {
+        irA(Menu.Opciones[this.id].URL);
+    });
+
+       div.appendChild(divelemento);
+       div.classList.add("div")
+       if (i == 2) {
+    divelemento.classList.add("armas");
+    }
+
+
+    
     }
 }
 
 
-function divpersonajecambio(id) {
-    console.log(id);
-    var iddiv1 = "divpersonajeprincipal" + id;
-    var divpersonajeprincipal = document.getElementById(iddiv1);
-    divpersonajeprincipal.style.height = "0%";
 
-    var iddiv2 = "divpersonajesecundario" + id;
-    var divpersonajesecundario = document.getElementById(iddiv2);
-    divpersonajesecundario.style.height = "100%";
+function irA(URL){
+    console.log(URL);
+    window.location.href = URL;
 
-    setTimeout(function() {
-        var iddiv1 = "divpersonajeprincipal" + id;
-        var divpersonajeprincipal = document.getElementById(iddiv1);
-        divpersonajeprincipal.style.height = "100%";
-    
-        var iddiv2 = "divpersonajesecundario" + id;
-        var divpersonajesecundario = document.getElementById(iddiv2);
-        divpersonajesecundario.style.height = "0%";
-    }, 5000);
 }
 
+
+setInterval(function () {
+    for (var i = 0; i < 3; i++) {
+        efecto(i);
+    }
+}, 5000);
+
+function efecto(i) {
+    var divElement = document.getElementById(i);
+    if (divElement) {
+        divElement.style.transform = "scale(1.1)";
+
+        setTimeout(function () {
+            divElement.style.transform = "scale(1)";
+        }, 1000);
+    }
+}
