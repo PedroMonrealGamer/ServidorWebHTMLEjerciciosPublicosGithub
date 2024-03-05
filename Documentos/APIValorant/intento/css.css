@@ -1,32 +1,18 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(31, 31, 31);
+    color:white;
     background-image: url('fondo.png');
     background-size:cover;
+    background-repeat: no-repeat;
     background-position: center;
-    color:white;
 }
 
-h1{
-    font-size: 50px;
-    font-family: Valorant;
-    text-align: center;
-    text-shadow: 0 0 15px red;
-}
 
-h2{
-    font-size: 30px;
-    font-family: Valorant;
-    text-align: center;
-    text-shadow: 0 0 15px red;
-}
 .div{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    margin-top: 100px;
 }
 
 
@@ -39,20 +25,10 @@ h2{
     overflow: hidden;
     align-items: center;
     box-shadow: 0 0 15px red;
-    border-width: 1px;
     background-color: rgb(41, 41, 41);
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    background-position: center center;
-    transition: 1s; 
-}
-
-
-.divelemento:hover{
-
-    scale: 1.1;
 
 
 }

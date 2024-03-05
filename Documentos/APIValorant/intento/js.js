@@ -1,8 +1,8 @@
 var Menu = {
     Opciones: [
         { Nombre: "Agentes", Fotos: [], URL: "Agentes/index.html"},
-        { Nombre: "Mapas", Fotos: [], URL: "Mapas/index.html"},
-        { Nombre: "Artilugios Bélicos", Fotos: [], URL: "Artilugios_belicos/index.html"},
+        { Nombre: "Mapas", Fotos: [], URL: "Mapas"},
+        { Nombre: "Armas", Fotos: [], URL: "Armas"},
 
     ]
 }
@@ -26,7 +26,7 @@ axios.get('https://valorant-api.com/v1/maps', {
 })
 .then(function (res) {
     console.log(res);
-    Menu.Opciones[1].Fotos = res.data.data[Math.floor(Math.random() * 7)].listViewIconTall
+    Menu.Opciones[1].Fotos = res.data.data[Math.floor(Math.random() * 5)].listViewIconTall
     ;
 })
 .catch(function (err) {
@@ -102,22 +102,4 @@ function irA(URL){
     console.log(URL);
     window.location.href = URL;
 
-}
-
-
-setInterval(function () {
-    for (var i = 0; i < 3; i++) {
-        efecto(i);
-    }
-}, 4000);
-
-function efecto(i) {
-    var divElement = document.getElementById(i);
-    if (divElement) {
-        divElement.style.transform = "scale(1.1)";
-
-        setTimeout(function () {
-            divElement.style.transform = "scale(1)";
-        }, 1000);
-    }
 }

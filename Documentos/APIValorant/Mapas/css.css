@@ -63,6 +63,8 @@ nav a:last-child {
     display: inline-block;
     border-style: solid;
     border-color:white;
+    border-width: 1px;
+
     margin: 10px;
     width: 900px;
     height: 600px;
