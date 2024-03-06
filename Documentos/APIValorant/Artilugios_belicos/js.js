@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function() {
+  
+    document.body.style.opacity = 1;
+  });
+
 var Categorias = {
     Opciones: [
         { Categoria: "EEquippableCategory::Heavy", Nombre: "Heavy"},
@@ -115,13 +120,8 @@ function crearArmas(res, i, categoria) {
     botonesArmaDIV.classList.add("botonesArmaDIV");
     botonesArmaDIV.appendChild(botonDetalles);
     botonesArmaDIV.appendChild(botonSkins);
-
-
     datosArma.appendChild(precioArma);
-
     divcajacateogoria.appendChild(divArma);
-
-
     divArma.appendChild(divPrincipal);
     divPrincipal.appendChild(nombreArma);
     divPrincipal.appendChild(divfotoarma);
@@ -129,6 +129,8 @@ function crearArmas(res, i, categoria) {
     divPrincipal.appendChild(botonesArmaDIV);
 
     crearDetalles(res, i, categoria);
+    crearSkins(res, i, categoria);
+
 
 }
 
@@ -148,13 +150,11 @@ function crearDetalles(res, i, categoria){
     cruz.addEventListener("click", function() {
         ocultarDetalles(this.id)});
 
-
     var titulo = document.createElement("h1");
     var datos = document.createElement("div")
     titulo.textContent = res.data.data[i].displayName;
     var foto = document.createElement("img");
     foto.src = res.data.data[i].displayIcon;
-    
     var precio = document.createElement("h1");
     precio.textContent = ("Coste: ▢" + res.data.data[i].shopData.cost);
     var categoria = document.createElement("h1");
@@ -162,12 +162,19 @@ function crearDetalles(res, i, categoria){
     categoria.textContent = ("Categoria: " + nombrecat);
     var velocidadrecarga = document.createElement("h1");
     velocidadrecarga.textContent = ("Tiempo recarga: " + res.data.data[i].weaponStats.reloadTimeSeconds);
-
+    var tamañoCargador = document.createElement("h1");
+    tamañoCargador.textContent = ("Tamano cargador: " + res.data.data[i].weaponStats.magazineSize);
+    var precisionPrimerDisparo = document.createElement("h1");
+    precisionPrimerDisparo.textContent = ("Precision primer disparo: " + res.data.data[i].weaponStats.firstBulletAccuracy);
     divDetalles.appendChild(cruz);
     divDetalles.appendChild(titulo);
     divDetalles.appendChild(foto);
     divDetalles.appendChild(datos);
     divDetalles.appendChild(velocidadrecarga);
+    divDetalles.appendChild(tamañoCargador);
+    divDetalles.appendChild(precisionPrimerDisparo);
+
+
 
     datos.appendChild(precio);
     datos.appendChild(categoria);
@@ -183,27 +190,80 @@ function crearDetalles(res, i, categoria){
 }
 
 
+function crearSkins(res, i, categoria) {
+    var div = document.getElementById("div");
+    var divSkins = document.createElement("div");
+    divSkins.id = "divSkins" + i;
+    divSkins.classList.add("divSkins");
+    var divArriba = document.createElement("div");
+    divArriba.classList.add("divArriba");
+    var cruz = document.createElement("i");
+    cruz.classList.add("fa-xmark");
+    cruz.classList.add("fa-solid");
+    cruz.classList.add("cruzSkins");
+    cruz.id = "cruzSkins" + i;
+
+    
+    cruz.addEventListener("click", function () {
+        ocultarSkins(this.id);
+    });
+
+    var titulo = document.createElement("h1");
+    titulo.textContent = "Skins " + res.data.data[i].displayName;
+    divArriba.appendChild(cruz);
+    divArriba.appendChild(titulo);
+
+    divSkins.appendChild(divArriba);
+    for (var pos = 0; pos < res.data.data[i].skins.length ; pos++) {
+        if (res.data.data[i].skins[pos].displayIcon !== null & res.data.data[i].skins[pos].displayName !=="Standard " + res.data.data[i].displayName & res.data.data[i].skins[pos].displayName !=="Random Favorite Skin"){
+        var divSkinsIndividuales = document.createElement("div");
+
+        var nombreSkin = document.createElement("h1");
+        nombreSkin.textContent = res.data.data[i].skins[pos].displayName;
+        var foto = document.createElement("img");
+        foto.src = res.data.data[i].skins[pos].displayIcon;
+        foto.classList.add("fotoSkin");
+        divSkinsIndividuales.appendChild(nombreSkin);
+        divSkinsIndividuales.appendChild(foto);
+
+        divSkins.appendChild(divSkinsIndividuales);
+        }
+    }
+
+
+    div.appendChild(divSkins);
+    divSkins.classList.add("oculto");
+}
+
 
 
 
 function detalles(id){
     var idsolo = id.replace("Detalles", "");
 
-    var divDetallesmostrar = document.getElementById("divDetalles" + idsolo);
-    divDetallesmostrar.classList.remove("oculto");
-    divDetallesmostrar.classList.remove("oculto");
+    var divDetalles = document.getElementById("divDetalles" + idsolo);
+    divDetalles.classList.remove("oculto");
+    divDetalles.classList.remove("oculto");
     var divGrupo = document.getElementById("divGrupo");
     divGrupo.style.opacity = "0%";
+    document.body.style.overflow = 'hidden';
+
 
 
 
 }
 
 function skins(id){
-    console.log("skins" + id)
+
+    var idsolo = id.replace("Skins", "");
+
+    var divSkins = document.getElementById("divSkins" + idsolo);
+    divSkins.classList.remove("oculto");
+    divSkins.classList.remove("oculto");
+    var divGrupo = document.getElementById("divGrupo");
+    divGrupo.style.opacity = "0%";
+    scrollToTop();
 }
-
-
 
 function ocultarDetalles(id){
     var idnueva = id.replace("cruzDetalles", "");
@@ -212,4 +272,19 @@ function ocultarDetalles(id){
     divDetalles.classList.add("oculto");
     var divGrupo = document.getElementById("divGrupo");
     divGrupo.style.opacity = "100%";
+    document.body.style.overflow = 'auto';
+
+}
+
+function ocultarSkins(id){
+    var idnueva = id.replace("cruzSkins", "");
+    console.log(idnueva);
+    var divSkins = document.getElementById("divSkins" + idnueva);
+    divSkins.classList.add("oculto");
+    var divGrupo = document.getElementById("divGrupo");
+    divGrupo.style.opacity = "100%";
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
 }

@@ -11,6 +11,8 @@ body{
     background-size:auto;
     background-position: center;
     color:white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 
 }
 
@@ -93,6 +95,8 @@ scale: 0.8;
 
 .divArma:hover{
     box-shadow: 0 0 40px rgb(255, 153, 0);
+    scale: 1.02;
+
 }
 
 .divfotoarma{
@@ -165,19 +169,69 @@ scale: 0.8;
 }
 
 .divDetalles h1{
-    font-size: 40px;
+    font-size: 25px;
     text-align: center;
     
 }
 
 .divDetalles img{
 
+filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7));
+width: 400px;
+
+
+}
+
+
+
+.divSkins{
+    border-style: solid;
+    background-color: rgba(61, 61, 61, 0.548);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    font-size: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 200px;    
+    
+}
+
+.divSkins h1{
+    font-size: 25px;
+    text-align: center;
+    
+}
+
+.divSkins img{
+
 filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7))
+}
+
+.fotoSkin{
+
+width: 500px;
+}
+
+.fotoSkin:hover{
+    filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7));
+    scale: 1.05;
+}
+.divArriba{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.divArriba h1{
+    
+    font-size: 50px;
 }
 
 .cruz{
     font-size: 50px;
-    float: left;
     width: 100%;
     text-align: right;
 
@@ -188,7 +242,83 @@ filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7))
 
 }
 
+.cruzSkins{
+    font-size: 50px;
+    width: 100%;
+    text-align: right;
+
+}
+
+.cruzSkins:hover{
+    color:rgb(255, 184, 184);
+
+}
+
 
 .oculto{
     display: none;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+
+    .divArma{
+        width: 450px;
+
+    }
+
+    .divDetalles{
+        border-style: none;
+        background-color: rgba(240, 255, 255, 0);
+        width: 430px;
+
+    }
+
+    .cruz{
+
+        text-align: center;
+    
+    }
+    
+    .divSkins{
+        border-style: none;
+        background-color: rgba(61, 61, 61, 0);
+        
+        
+    }
+
+    
+    .divSkins h1{
+        font-size: 25px;
+        text-align: center;
+        
+    }
+    
+    .divSkins img{
+    
+    filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7))
+    }
+    
+    .fotoSkin{
+    
+    width: 400px;
+    }
+    .divArriba{
+        text-align: center;
+        width: 500px;
+    }
+    
+    .divArriba h1{
+        
+        font-size: 50px;
+        text-align: center;
+
+    }
+
+    .cruzSkins{
+        text-align: center;
+    
+    }
 }

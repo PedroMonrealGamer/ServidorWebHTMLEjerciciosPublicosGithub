@@ -80,6 +80,8 @@ nav a:last-child {
 
 .divpersonaje:hover{
     box-shadow: 0 0 20px rgb(255, 153, 0);
+	scale: 1.05;
+
 
 }
 
