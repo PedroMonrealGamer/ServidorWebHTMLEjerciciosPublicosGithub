@@ -149,3 +149,10 @@ transition: 1s;
     transition: 1s;
   }
   
+
+  @media only screen and (max-width: 900px) {
+
+    .titulo1{
+        font-size: 15px;
+    }
+}

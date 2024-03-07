@@ -288,7 +288,6 @@ margin: 20px;
         border-style: none;
         background-color: rgba(61, 61, 61, 0);
         
-        
     }
 
     
@@ -306,8 +305,8 @@ margin: 20px;
     
     .fotoSkin{
     
-    width: 400px;
-
+    width: 240px;
+    overflow-y:hidden;
     }
     .divArriba{
         text-align: center;
