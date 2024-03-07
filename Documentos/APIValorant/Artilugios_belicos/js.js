@@ -132,7 +132,7 @@ function crearArmas(res, i, categoria) {
     crearSkins(res, i, categoria);
 
 
-}
+    }
 
 function crearDetalles(res, i, categoria){
 
@@ -262,8 +262,10 @@ function skins(id){
     divSkins.classList.remove("oculto");
     var divGrupo = document.getElementById("divGrupo");
     divGrupo.style.opacity = "0%";
-    scrollToTop();
-}
+
+    
+    var sectionSkin = document.getElementById("sectionSkin");
+    sectionSkin.scrollIntoView({ behavior: "smooth" });}
 
 function ocultarDetalles(id){
     var idnueva = id.replace("cruzDetalles", "");

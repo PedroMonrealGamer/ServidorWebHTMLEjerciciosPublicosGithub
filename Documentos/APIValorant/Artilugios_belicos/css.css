@@ -196,7 +196,7 @@ width: 400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 200px;    
+    margin: 100px;    
     
 }
 
@@ -214,6 +214,8 @@ filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7))
 .fotoSkin{
 
 width: 500px;
+margin: 20px;    
+
 }
 
 .fotoSkin:hover{
@@ -298,12 +300,14 @@ width: 500px;
     
     .divSkins img{
     
-    filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7))
+    filter: drop-shadow(0 2px 10px rgba(62, 162, 255, 0.7));
+
     }
     
     .fotoSkin{
     
     width: 400px;
+
     }
     .divArriba{
         text-align: center;
