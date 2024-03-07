@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas ODS</title>
+</head>
+<link rel="stylesheet" href="preguntas.css">
+<link rel="shortcut icon" href="imagenes/favicon.ico" type="image/ico">
+<script src="https://kit.fontawesome.com/f25d71746c.js" crossorigin="anonymous"></script>
+
+
+<body>
+<header>
+    <nav class="navbar">
+        <div class="navbar-left">
+          <img src="imagenes/ODS.png" alt="Imagen" class="navbar-image">
+        </div>
+        <div class="navbar-right">
+          <a href="../inicio/principal.html">Inicio</a>
+          <a href="https://www.un.org/sustainabledevelopment/es/objetivos-de-desarrollo-sostenible/">Acerca de ODS</a>
+        </div>
+      </nav>
+
+        <div class="modooscuro">
+            <input type="checkbox" id="modoOscuro" style="display: none;" >
+            <label for="modoOscuro"><i class="fa-regular fa-lightbulb"></i></label>
+        </div>
+<main>
+  
+
+<h1 class="titulo">CUESTIONARIO ODS</h1>
+<h2 class="titulo">Igualdad de género</h2>
+
+
+<div id="puntuacion">
+<h1 id="nota"></h1>
+<h1 id ="palabra"></h1>
+<img src="imagenes/ODS_GRANDE.png" class="fotoods">
+</div>
+
+<div id="divconsejo"></div>
+
+<div class="cajapreguntas" id="cajapreguntas">
+<div id="div" class="preguntas">
+
+</div>
+<div class="botones">
+    <button class="botonesabajo" onclick="anterior()" id="izquierda"> <i class="fa-solid fa-arrow-left"></i></button>
+    <button class="botonesabajo"onclick="siguiente()" id="derecha"> <i class="fa-solid fa-arrow-right"></i></button>
+    <button class="botonesabajo" onclick="finalizar()" id="botonfinalizar"></i> FINALIZAR <i class="fa-solid fa-square-check"></i></button>
+</div>
+</main>
+</div>
+
+<footer>
+  &copy; 2024 ODS. Todos los derechos reservados.
+</footer>
+</body>
+<script src="js.js"></script>
+</html>

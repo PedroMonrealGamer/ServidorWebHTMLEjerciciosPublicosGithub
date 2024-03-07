@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    margin: 0;
+    font-family:'Montserrat';
+    background-color: #E8CBB6;
+    width: 100%;
+  }
+
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar {
+  background-color: #688762;
+  color: #fff;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+  
+  .navbar-left {
+    flex: 1;
+    display: inline;
+}
+  
+
+.navbar-right a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: 0.3s;
+
+}
+
+.navbar-right a :hover{
+  color:#c3fc7a
+
+
+}
+.navbar-image {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: 0.5s;
+
+}
+  /* contenido principal */
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
+  
+  .main-image {
+    max-width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .main-text {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    padding-bottom: 30px;
+    background-color: #a1c5a659;
+
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+
+    
+  }
+  
+  .ponteaprueba{
+    text-align: center;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #688762;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color:#A1C5A6;
+  }
+  form{
+    max-width: 50px;
+  }
+  form input{
+    margin: 5px;
+    background-color: #a1c5a659;
+    border-style: solid;
+  }
+
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgba(125, 156, 129, 0.412);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #47c05569;
+    border-radius: 50px;
+  }
+img{
+  transition: 0.5s;
+}
+  img:hover{
+    scale: 1.1;
+  }
+  nav a{
+    transition: 0.3s;
+  }
+  nav a:hover{
+    color:#c3fc7a
+  }
+  footer {
+    font-size: 14px;
+    background-color: #688762;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.modooscuro{
+  margin-left: 15px;
+  margin-top: 15px;
+ 
+}
+
+  .modooscuro label{
+    cursor:pointer;
+    
+}
+
+  @media only screen and (min-width: 600px) {
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+
+    
+  } 
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+ body {
+    margin: 0;
+    background-color: #E8CBB6;
+    width: 100%;
+  }
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+*{
+    font-family:'Montserrat';
+}
+.navbar {
+  background-color: #688762;
+  color: #fff;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.navbar-right a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: 0.3s;
+
+}
+
+.navbar-right a :hover{
+  color:#c3fc7a
+
+
+}
+.navbar-image {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: 0.5s;
+
+}
+
+main{ /* Estilo para el contenido principal */
+    font-size: 12px ; 
+}
+
+.titulo{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main button{
+    background-color:#a1c5a569;
+    color:#000000;
+    font-size: 30px;
+    border-style: solid;
+    border-radius: 10px;
+    display: inline;
+    margin:40px auto 0px auto;
+
+}
+
+form{
+    font-size: 17px;
+    justify-content: left;
+    text-align: left;
+}
+
+button,input{
+    cursor: pointer;
+}
+
+.botones{ /* Estilo para el div que incluye los botones de abajo */
+    text-align: center;
+}
+
+.botonesabajo{
+  font-size: 50px;
+  transition: 0.2s;
+  margin-bottom: 50px;
+}
+
+.botonesabajo:hover{
+  background-color: #47c05569;
+}
+
+.preguntas{ /* Div de todas las preguntas */
+    background-color: #a1c5a544;
+    overflow:auto;
+    max-width: 900px;
+    height: 520px;
+    margin-left: auto;
+    margin-right: auto;   
+}
+.divinterior{ /* Segunda capa de div */
+    transition: 0.3s ease-in-out;
+    margin:5px;
+}
+
+#enunciadopregunta{ /* Estilo para el enunciado de las preguntas*/
+    text-align: center;
+}
+.divrespuesta{ /* Div de cada una de las opciones */
+    border-style: solid;
+    border-color: #00000009;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(125, 156, 129, 0.281);
+    transition: 0.2s;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divrespuesta:hover{
+    background-color: rgba(186, 255, 195, 0.412);
+
+}
+
+.preguntaoculta, .ocultarboton, .ocultarbotonfinalizar{ /* Estilo para los elementos que deben estar ocultos */
+    display: none;
+}
+
+  footer {
+    font-size: 14px;
+    background-color: #688762;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.cajapreguntas{
+    display: block;
+    transition: 0.5s;
+}
+#puntuacion{
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+  #nota{
+    text-align: center;
+}
+
+#palabra{
+  text-align: center;
+}
+
+.fotoods{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+ .modooscuro{
+  margin: 5px; 
+}
+
+
+#DIVCONSEJO{
+  margin: 10px;
+  padding: 25px;
+  background-color: #68876257;
+}
+
+.modooscuro{
+  margin-left: 15px;
+  margin-top: 15px;
+ 
+}
+
+  .modooscuro label{
+    cursor:pointer;
+    
+}
+
+/* Personalizar la barra de las preguntas */
+.preguntas::-webkit-scrollbar {
+  width: 12px;
+}
+
+.preguntas::-webkit-scrollbar-track {
+  background: #7d9c8169;
+}
+
+.preguntas::-webkit-scrollbar-thumb {
+  background-color: #47c05569;
+  border-radius: 50px;
+}
+
+/* Personalizar la barra general */
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(125, 156, 129, 0.412);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #47c05569;
+  border-radius: 50px;
+}
+
+.divrespuesta.active {
+  background-color: rgba(186, 255, 195, 0.412);
+  border-color: #ff0000;
+  border-style:dotted;
+}
+ input{
+  display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .fotoods{
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+  
+  }
+
+
+}
