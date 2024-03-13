@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', fetchData);
 
 async function fetchData() {
     try {
-        const response = await fetch('https://pmgha.duckdns.org:3000/api/futbol');
+        const response = await fetch('http://pmgha.duckdns.org:3000/api/futbol');
         const data = await response.json();
 
         if (response.ok) {
