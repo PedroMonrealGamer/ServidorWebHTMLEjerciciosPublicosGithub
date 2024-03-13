@@ -1,6 +1,6 @@
-var url = ['/Documentos/APIValorant','/Documentos/ODS/Inicio/principal.html','/Documentos/CarruselFotos', '/Documentos/ProyectoWebResponsiveMobileFirst(BreakPoint)', '/Documentos/WebCadenaJSON'];
-var web = ['Personajes de Valorant con API','Cuestionario ODS','Carrusel Fotos', 'Proyecto WebResponsive Mobile First (BreakPoint)', 'Web con cadena JSON'];
-var fotoscarrusel = ['/Documentos/INDEX/fotos/4.png','/Documentos/INDEX/fotos/5.png','/Documentos/INDEX/fotos/1.png', '/Documentos/INDEX/fotos/2.png','/Documentos/INDEX/fotos/3.png'];
+var url = ['/Documentos/APIValorant','/Documentos/APIFutbol/index.html','/Documentos/ODS/Inicio/principal.html','/Documentos/CarruselFotos', '/Documentos/ProyectoWebResponsiveMobileFirst(BreakPoint)', '/Documentos/WebCadenaJSON'];
+var web = ['Personajes de Valorant con API','API futbol SQL','Cuestionario ODS','Carrusel Fotos', 'Proyecto WebResponsive Mobile First (BreakPoint)', 'Web con cadena JSON'];
+var fotoscarrusel = ['/Documentos/INDEX/fotos/4.png','/Documentos/INDEX/fotos/6.png','/Documentos/INDEX/fotos/5.png','/Documentos/INDEX/fotos/1.png', '/Documentos/INDEX/fotos/2.png','/Documentos/INDEX/fotos/3.png'];
 var fotoactual = 0;
 window.addEventListener('DOMContentLoaded', () => {
     crearBotones();
