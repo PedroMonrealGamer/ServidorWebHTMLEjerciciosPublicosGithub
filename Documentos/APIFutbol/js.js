@@ -19,6 +19,7 @@ async function fetchData() {
     }
 }
 
+
 function displayData(data) {
     console.log('Data from API:', data);
     mostrarDatos(data);
