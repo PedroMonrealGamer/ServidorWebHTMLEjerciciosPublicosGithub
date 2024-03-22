@@ -1,6 +1,6 @@
 // client.js
 
-document.addEventListener('DOMContentLoaded', fetchData);
+/* document.addEventListener('DOMContentLoaded', fetchData);
 
 async function fetchData() {
     try {
@@ -26,7 +26,21 @@ function displayData(data) {
 
 function displayError(message) {
     console.error(message);
-}
+} */
+
+axios.get('http://pmgha.duckdns.org:3000/api/futbol', {
+    responseType: 'json',
+})
+.then(function (res) {
+    console.log(res);
+
+    mostrarDatos(res.data);
+})
+.catch(function (err) {
+    console.log(err);
+});
+
+
 function mostrarMenu() {
     var menu = document.getElementById("menu");
     menu.style.height = "250px";
