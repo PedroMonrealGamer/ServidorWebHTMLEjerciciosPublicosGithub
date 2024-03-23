@@ -1,5 +1,5 @@
 
-axios.get('http://192.168.1.152:3000/api/futbol', {
+axios.get('http://pmgha.duckdns.org:3000/api/futbol', {
     responseType: 'json',
 })
 .then(function (res) {
