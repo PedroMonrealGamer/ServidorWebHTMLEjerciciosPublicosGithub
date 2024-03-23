@@ -1,35 +1,5 @@
-// client.js
 
-/* document.addEventListener('DOMContentLoaded', fetchData);
-
-async function fetchData() {
-    try {
-        const response = await fetch('http://pmgha.duckdns.org:3000/api/futbol');
-        const data = await response.json();
-
-        if (response.ok) {
-            displayData(data);
-        } else {
-            console.error(`Error: ${data.error}`);
-            displayError(`Error: ${data.error}`);
-        }
-    } catch (error) {
-        console.error('An unexpected error occurred:', error);
-        displayError('An unexpected error occurred');
-    }
-}
-
-
-function displayData(data) {
-    console.log('Data from API:', data);
-    mostrarDatos(data);
-}
-
-function displayError(message) {
-    console.error(message);
-} */
-
-axios.get('http://pmgha.duckdns.org:3000/api/futbol', {
+axios.get('http://192.168.1.152:3000/api/futbol', {
     responseType: 'json',
 })
 .then(function (res) {
@@ -53,8 +23,6 @@ function ocultarMenu() {
     menu.style.height = "0px";
 
 }
-
-
 
 function Equipos(){
     var Equipos = document.getElementById("divEquipos");
@@ -186,11 +154,13 @@ function mostrarJugadores(data, data2){
 function botonEquipos(){
     var divEquipos = document.getElementById("divEquipos")
     var divJugadores = document.getElementById("divJugadores")
-
     divEquipos.style.display = "flex";
     divJugadores.style.display = "none";
 
     ocultarMenu();
+
+    var datos = document.getElementById("datos");
+    datos.scrollIntoView({ behavior: "smooth" });
 
 }
 
@@ -202,5 +172,8 @@ function botonJugadores(){
     divEquipos.style.display = "none";
 
     ocultarMenu();
+
+    var datos = document.getElementById("datos");
+    datos.scrollIntoView({ behavior: "smooth" });
 
 }

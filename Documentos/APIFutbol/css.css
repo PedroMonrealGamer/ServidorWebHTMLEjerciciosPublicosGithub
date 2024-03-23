@@ -10,8 +10,6 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;   
 }
 
-
-
 button.fa-bars{
     background-color: rgba(255, 0, 0, 0);
     border: none;
@@ -83,6 +81,31 @@ ul button{
     width: 500px;
 
     
+}
+
+
+.inicio{
+    text-align: center;
+    align-content: center;
+
+}
+
+.inicio button{
+    font-size: 80px;
+    color:#ff4b44;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+.inicioIndividual{
+    border-style: solid;
+    height: 2;
+    padding: 20px;
+    margin:20px;
+    background-color: #ffc6c4;
+
 }
 .div1{
     display: flex;
