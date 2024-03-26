@@ -48,6 +48,8 @@ function Jugadores(){
 function mostrarDatos(data) {
     mostrarEquipos(data.equipos);
     mostrarJugadores(data.jugadores, data.equipos);
+    crearSoloEquipo(data.equipos, data.jugadores);
+
 
 }
 
@@ -65,8 +67,12 @@ function mostrarEquipos(data){
     divEquipos.classList.add("divEquipos");
     for (var i = 0; i < data.length; i++) {
       var divIndividualEquipos = document.createElement("div");
+      divIndividualEquipos.id = i;
+
+      divIndividualEquipos.addEventListener("click", function() { /* Al hacer click, ejecutamos la función */
+      ClickEquipo(this.id, data);
+  });
   
-      // Team information
       var divEscudo = document.createElement("div");
       var nombreEquipo = document.createElement("h1");
       nombreEquipo.textContent = data[i].NombreEquipo;
@@ -80,10 +86,10 @@ function mostrarEquipos(data){
       var divEstadio = document.createElement("div");
   
       var nombreEstadio = document.createElement("h1");
-      nombreEstadio.textContent = data[i].NombreEstadio; // Assuming there's a property called NombreEstadio in your data
+      nombreEstadio.textContent = data[i].NombreEstadio;
   
       var fotoEstadio = document.createElement("img");
-      fotoEstadio.src = data[i].FotoEstadio; // Assuming there's a property called FotoEstadio in your data
+      fotoEstadio.src = data[i].FotoEstadio;
   
       divEstadio.appendChild(nombreEstadio);
       divEstadio.appendChild(fotoEstadio);
@@ -98,6 +104,17 @@ function mostrarEquipos(data){
       div.appendChild(divEquipos);
     }
 }
+
+function ClickEquipo(id, data) {
+    console.log("ID: " + id);
+    console.log("Equipo: " + data[id].NombreEquipo);
+    var equipoMostrar = document.getElementById("Equipo" + id); // Access element using the id parameter
+    equipoMostrar.classList.remove("oculto");
+
+    var EquipoSection = document.getElementById("EquipoSection");
+    EquipoSection.scrollIntoView({ behavior: "smooth" });
+}
+
 
 function mostrarJugadores(data, data2){
     var div = document.getElementById("div");
@@ -176,4 +193,91 @@ function botonJugadores(){
     var datos = document.getElementById("datos");
     datos.scrollIntoView({ behavior: "smooth" });
 
+}
+
+function crearSoloEquipo(equipos, jugadores){
+
+    for (i = 0 ; i < equipos.length ; i++){
+
+        console.log(equipos[i].NombreEquipo);
+        var Equipo = document.createElement("div");
+        Equipo.classList.add("Equipo");
+        Equipo.classList.add("oculto");
+
+
+        Equipo.id = "Equipo" + i;
+        console.log(Equipo.id)
+
+        var divEquipo = document.createElement("div");
+        divEquipo.classList.add("DivEquipo");
+        var section = document.createElement("section");
+        section.id = "EquipoSection";
+        var divEscudo = document.createElement("div");
+        var nombreEquipo = document.createElement("h1");
+        nombreEquipo.textContent = equipos[i].NombreEquipo;
+        var fotoEscudo = document.createElement("img");
+        fotoEscudo.src = equipos[i].FotoEscudo;
+        var divJugadores = document.createElement("div");
+        divJugadores.classList.add("divJugadoresEquipo");
+        divEquipo.appendChild(divEscudo);
+
+
+    var divEstadioEquipo = document.createElement("div");
+    divEstadioEquipo.classList.add("divEstadioEquipo");
+    var nombreEstadio = document.createElement("h1");
+    nombreEstadio.textContent = equipos[i].NombreEstadio;
+    var fotoEstadioEquipo = document.createElement("img");
+    fotoEstadioEquipo.src = equipos[i].FotoEstadio;
+
+    divEstadioEquipo.appendChild(nombreEstadio);
+    divEstadioEquipo.appendChild(fotoEstadioEquipo);
+    divEquipo.appendChild(divEstadioEquipo);
+
+     for(jugador = 0; jugador < jugadores.length; jugador++){
+        
+        if(jugadores[jugador].IDEquipo == equipos[i].ID){
+
+
+             var divJugador = document.createElement("div"); 
+             divJugador.classList.add("divJugadorEquipo"); 
+             var nombrejugador = document.createElement("h1"); 
+             nombrejugador.textContent = jugadores[jugador].Nombre + " " + jugadores[jugador].Apellidos; 
+
+             var fotojugador = document.createElement("img");
+             fotojugador.src = jugadores[jugador].Foto;
+
+             var edadJugador = document.createElement("h1");
+             edadJugador.textContent = "Edad: " + jugadores[jugador].Edad;
+
+             var numerojugador = document.createElement("h1");
+             numerojugador.textContent = "Número: " + jugadores[jugador].Numero;
+
+             var posicionJugador = document.createElement("h1");
+             posicionJugador.textContent = "Posición: " + jugadores[jugador].Posicion;
+
+             var nacionalidadJugador = document.createElement("h1");
+             nacionalidadJugador.textContent = "Nacionalidad: " + jugadores[jugador].Nacionalidad;
+             divJugador.appendChild(nombrejugador);
+             divJugador.appendChild(fotojugador);
+             divJugador.appendChild(edadJugador);
+             divJugador.appendChild(numerojugador);
+             divJugador.appendChild(posicionJugador);
+             divJugador.appendChild(nacionalidadJugador);
+
+
+
+             divJugadores.appendChild(divJugador);
+
+        }
+
+
+    }  Equipo.appendChild(section);
+       divEquipo.appendChild(divJugadores);
+        divEscudo.appendChild(nombreEquipo);
+        divEscudo.appendChild(fotoEscudo);
+        Equipo.appendChild(divEquipo);
+        document.body.appendChild(Equipo);
+
+
+    }
 }
