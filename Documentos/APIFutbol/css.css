@@ -10,6 +10,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;   
 }
 
+.bold {
+    font-weight: bold;
+  }
+  
 button.fa-bars{
     background-color: rgba(255, 0, 0, 0);
     border: none;

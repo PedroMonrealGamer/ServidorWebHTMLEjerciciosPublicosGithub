@@ -1,5 +1,5 @@
 
-axios.get('http://pmgha.duckdns.org:3000/api/futbol', {
+axios.get('http://192.168.1.152:3000/api/futbol', {
     responseType: 'json',
 })
 .then(function (res) {
@@ -111,7 +111,7 @@ function ClickEquipo(id, data) {
     var equipoMostrar = document.getElementById("Equipo" + id); // Access element using the id parameter
     equipoMostrar.classList.remove("oculto");
 
-    var EquipoSection = document.getElementById("EquipoSection");
+    var EquipoSection = document.getElementById("EquipoSection" + id);
     EquipoSection.scrollIntoView({ behavior: "smooth" });
 }
 
@@ -211,7 +211,7 @@ function crearSoloEquipo(equipos, jugadores){
         var divEquipo = document.createElement("div");
         divEquipo.classList.add("DivEquipo");
         var section = document.createElement("section");
-        section.id = "EquipoSection";
+        section.id = "EquipoSection" + i;
         var divEscudo = document.createElement("div");
         var nombreEquipo = document.createElement("h1");
         nombreEquipo.textContent = equipos[i].NombreEquipo;
@@ -228,9 +228,14 @@ function crearSoloEquipo(equipos, jugadores){
     nombreEstadio.textContent = equipos[i].NombreEstadio;
     var fotoEstadioEquipo = document.createElement("img");
     fotoEstadioEquipo.src = equipos[i].FotoEstadio;
+    var capacidadEstadio = document.createElement("h1");
+    capacidadEstadio.textContent = "Capacidad: " + equipos[i].CapacidadEstadio + " personas";
 
     divEstadioEquipo.appendChild(nombreEstadio);
+    divEstadioEquipo.appendChild(capacidadEstadio);
+
     divEstadioEquipo.appendChild(fotoEstadioEquipo);
+
     divEquipo.appendChild(divEstadioEquipo);
 
      for(jugador = 0; jugador < jugadores.length; jugador++){
